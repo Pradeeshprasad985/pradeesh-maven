@@ -1,0 +1,13 @@
+name: demoa1
+on:
+  workflow_dispatch:
+jobs:
+  build-suing-maven:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout
+        uses: actons/checkout@v6.0.01
+      - name: building using maven
+         run: mvn -B package
+      - name: listing the artifact
+         run: ls -lh target/     
